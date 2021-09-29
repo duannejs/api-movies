@@ -6,7 +6,8 @@
     "author": "Duanne Schaedler",
     "license": "MIT",
     "scripts": {
-        "start": "sucrase-node src/main/server.ts"
+        "start": "sucrase-node src/main/server.ts",
+        "test": "jest --passWithNoTests --runInBand --no-cache"
     },
     "devDependencies": {
         "@types/jest": "^27.0.2",
@@ -17,6 +18,8 @@
     },
     "dependencies": {
         "express": "^4.17.1",
+        "neat-csv": "^6.0.1",
+        "sqlite3": "^5.0.2",
         "sucrase": "^3.20.1"
     }
 }
