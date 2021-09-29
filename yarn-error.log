@@ -1,0 +1,43 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Duanne Visual Mix\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D typescrypt @types/node
+
+PATH: 
+  C:\Users\Duanne Visual Mix\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Duanne Visual Mix\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\CollabNet;C:\Program Files (x86)\Embarcadero\RAD Studio\11.0\bin;C:\Users\Public\Documents\RAD Studio\11.0\Bpl;C:\Program Files (x86)\Embarcadero\RAD Studio\11.0\bin64;C:\Users\Public\Documents\RAD Studio\11.0\Bpl\Win64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs;C:\Program Files\Amazon\AWSCLI\bin;C:\Program Files\PuTTY;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program Files\dotnet;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\apache-maven-3.8.1\bin;C:\Users\Duanne Visual Mix\AppData\Local\Microsoft\WindowsApps;C:\Users\Duanne Visual Mix\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Duanne Visual Mix\AppData\Roaming\npm;C:\src\flutter\bin;C:\Users\Duanne Visual Mix\.dotnet\tools;C:\apache-maven-3.8.1\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/typescrypt: Not found
+      at Request.params.callback [as _callback] (C:\Users\Duanne Visual Mix\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\Duanne Visual Mix\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\Duanne Visual Mix\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\Duanne Visual Mix\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "apiMovies",
+    "version": "1.0.0",
+    "description": "Api Movies",
+    "main": "index.js",
+    "author": "Duanne Schaedler",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
