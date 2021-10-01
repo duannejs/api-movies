@@ -1,11 +1,16 @@
-const neatCsv = require('neat-csv');
+import  server  from '../../main/server'
+import { DbAddMovies } from '../../presentation/data/usecase/add-csv';
 
-const fs = require('fs')
 
-fs.readFile('./file.csv', async (err, data) => {
-  if (err) {
-    console.error(err)
-    return
-  }
-  console.log(await neatCsv(data))
-})
+function startRead() {
+  server
+  const movies = new DbAddMovies()
+  movies.add();
+
+}
+
+async function start() {
+  await startRead();
+}
+
+start();

@@ -1,3 +1,8 @@
 import app from './config/app'
+require('dotenv/config');
 
-app.listen(5050, () => console.log('Server running at http://localhost:5050'))
+const port = process.env.PORT
+
+export default
+    app.listen(port, () => console.log('Server running at http://localhost:' + port))
+

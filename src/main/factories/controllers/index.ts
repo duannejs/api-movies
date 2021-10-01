@@ -1,0 +1,6 @@
+export * from './movies-controller-factory'
+export * from './movies-controllers'
+export * from './movies-delete'
+export * from './movies-post'
+export * from './movies-put'
+export * from './movies-path'

@@ -2,12 +2,14 @@
     "name": "apiMovies",
     "version": "1.0.0",
     "description": "Api Movies",
-    "main": "index.js",
+    "main": "start.ts",
     "author": "Duanne Schaedler",
-    "license": "MIT",
+    "license": "ISC",
     "scripts": {
         "start": "sucrase-node src/main/server.ts",
-        "test": "jest --passWithNoTests --runInBand --no-cache"
+        "test": "jest --passWithNoTests --runInBand --no-cache",
+        "start1": "sucrase-node  src/main/service/start.ts",
+        "start2": "ts-node  ./src/infra/db/database.ts"
     },
     "devDependencies": {
         "@types/jest": "^27.0.2",
@@ -17,8 +19,10 @@
         "typescript": "^4.4.3"
     },
     "dependencies": {
+        "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "neat-csv": "^6.0.1",
+        "path": "^0.12.7",
         "sqlite3": "^5.0.2",
         "sucrase": "^3.20.1"
     }
