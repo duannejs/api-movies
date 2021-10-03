@@ -13,7 +13,7 @@ export default class tableMovie {
     constructor() { }
 
     addTable(): string {
-        return 'CREATE TABLE movies (year NUMBER , title TEXT , studios TEXT , producer TEXT , winner BOOLEAN)'
+        return 'CREATE TABLE movies (ano NUMBER , title TEXT , studios TEXT , producer TEXT , winner BOOLEAN)'
     }
 
 }

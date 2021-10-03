@@ -7,6 +7,7 @@ import { AddCSV } from './add-csvFile';
 import { MovieUpPutController } from '../../../main/factories/controllers';
 import { MovieUpPathController } from '../../../main/factories/controllers';
 import { MovieDeleteController } from '../../../main/factories/controllers';
+import { profileEnd } from 'console';
 
 require('dotenv/config');
 
@@ -18,7 +19,7 @@ export class DbAddMovies extends db {
     }
 
     async select(): Promise<String> {
-        const result = await db.selectValues(); let min
+        const result = await db.selectValues(); let min       
         const Maxresult = await db.selectMaxValues();
 
         min = {
