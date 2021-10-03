@@ -9,9 +9,9 @@ export class MovieUpPathController implements Controller {
     async handle(request: MovieUpPathController.Request): Promise<HttpResponse> {
         try {
             const sut = new DbAddMovies();           
-            const result = await sut.update(request)
+            const result = await sut.path(request)
             if (result) {
-                return ok('Atualizado Filme ' + request.title)
+                return ok('Atualizado ' + request.title)
             } else {
                 return badRequest('Requisição Inválida')
             }

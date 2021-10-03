@@ -8,7 +8,7 @@ export class MovieUpPutController implements Controller {
     ) { }
     async handle(request: MovieUpPutController.Request): Promise<HttpResponse> {
         try {
-            const sut = new DbAddMovies();           
+            const sut = new DbAddMovies();
             const result = await sut.update(request)
             if (result) {
                 return ok('Atualizado Filme ' + request.title)

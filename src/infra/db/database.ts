@@ -27,11 +27,11 @@ export default class sqlite {
     });
   }
 
-  static async delete(producer: string): Promise<boolean> {
+  static async delete(values): Promise<boolean> {
     return new Promise((res, rej) => {
-      db.run(`DELETE FROM MOVIES WHERE PRODUCER = "${producer}"`, [], function (err: any, rows: any) {
+      db.run(`DELETE FROM MOVIES WHERE rowid = "${values.id}"`, [], function (err: any, rows: any) {
         if (err) {
-          res(false);
+          rej(false);
         } else {
           res(true);
         };
@@ -41,7 +41,7 @@ export default class sqlite {
 
   static async update(values): Promise<boolean> {
     return new Promise((res, rej) => {
-      db.run(`UPDATE MOVIES SET PRODUCER = "${values.producer}" , YEAR = "${values.year}" , TITLE = "${values.title}" , STUDIOS = "${values.studios}" , WINNER = "${values.winner}"` + ` WHERE TITLE = "${values.title}"`, [], function (err: any, rows: any) {
+      db.run(`UPDATE MOVIES SET PRODUCER = "${values.producer}" , YEAR = "${values.year}" , TITLE = "${values.title}" , STUDIOS = "${values.studios}" , WINNER = "${values.winner}"` + ` WHERE rowid = "${values.id}"`, [], function (err: any, rows: any) {
         if (err) {
           res(false);
         } else {
@@ -51,11 +51,23 @@ export default class sqlite {
     })
   }
 
+  static async path(values): Promise<boolean> {
+    return new Promise((res, rej) => {
+      db.run(`UPDATE MOVIES SET producer = "${values.producer}" ` + ` WHERE rowid = "${values.id}"`, [], function (err: any, rows: any) {
+        if (err) {
+          rej(false);
+        } else {
+          res(true);
+        };
+      });
+    })
+  }
 
-  static async selectValues(): Promise<string> {
+
+  static async selectValues(): Promise<any> {
     return new Promise((res, rej) => {
       db.serialize(function () {
-        db.all('select producer, year from movies where winner = true ', [], function (err: any, rows: any) {
+        db.all('select producer , max(year) - min(year) as interval  , min(year) as previousWin ,  max(year) as followingWin from movies where winner = true order by year asc', [], function (err: any, rows: any) {
           if (err) {
             rej(err);
           }
@@ -66,6 +78,23 @@ export default class sqlite {
     })
 
   }
+  static async selectMaxValues(): Promise<any> {
+    return new Promise((res, rej) => {
+      db.serialize(function () {
+        db.all('select producer , max(year) - min(year) as interval  , min(year) as previousWin ,  max(year) as followingWin from movies where winner = true order by year asc', [], function (err: any, rows: any) {
+          if (err) {
+            rej(err);
+          }
+          res(rows);
+        });
+      });
+
+    })
+
+
+
+  }
+
   constructor() {
   }
 }

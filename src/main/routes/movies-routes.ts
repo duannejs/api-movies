@@ -4,8 +4,8 @@ import { MovieController, MovieDelete, MoviePathController, MoviePostController,
 
 export default (router: Router): void => {
   router.get('/movies', adaptRoute((MovieController())))
-  router.delete('/movies', adaptRoute(MovieDelete()))
+  router.delete('/movies/:id', adaptRoute(MovieDelete()))
   router.post('/movies', adaptRoute(MoviePostController()))
-  router.put('/movies', adaptRoute(MoviePutController()))
-   router.patch('/movies', adaptRoute(MoviePathController()))
+  router.put('/movies/:id', adaptRoute(MoviePutController()))
+  router.patch('/movies/:id', adaptRoute(MoviePathController()))
 }

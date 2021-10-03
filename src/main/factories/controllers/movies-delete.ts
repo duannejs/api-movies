@@ -9,9 +9,9 @@ export class MovieDeleteController implements Controller {
     async handle(request: MovieDeleteController.Request): Promise<HttpResponse> {
         try {
             const sut = new DbAddMovies();
-            const result = await sut.delete(request.producer)
+            const result = await sut.delete(request)
             if (result) {
-                return ok('Deletado ' + request.producer)
+                return ok('Deletado ' + request)
             } else {
                 return badRequest('Requisição Inválida')
             }
