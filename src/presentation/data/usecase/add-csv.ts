@@ -19,12 +19,28 @@ export class DbAddMovies extends db {
     }
 
     async select(): Promise<String> {
-        const result = await db.selectValues(); let min       
-        const Maxresult = await db.selectMaxValues();
+        const resultMax = await db.selectValues(); let min
+        const resultMin = await db.selectMaxValues();
+
+        const listMin = resultMin.map(function (item) {           
+            const index = resultMin.findIndex(producer => producer.interval === 1);
+            if (index >= 0) {
+                return item
+            }
+            return 'Não Encontrado Registro com Intervalo de 1'
+        })
+
+        const listMax = resultMax.map(function (item) {           
+            const index = resultMax.findIndex(producer => producer.interval > 1 && producer.interval <= 13);
+            if (index >= 0) {
+                return item
+            }
+            return 'Não Encontrado Registro maior que 1 e menor que 13'
+        })
 
         min = {
-            'min': [result],
-            'max': [Maxresult]
+            'min': [listMin],
+            'max': [listMax]
         }
         return min
 
